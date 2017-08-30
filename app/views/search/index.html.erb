@@ -1,0 +1,23 @@
+
+<h1>ALL THE STATIONS</h1>
+<h2>These are the <%= @stations.count %> closest stations within 6 miles of your selected zip</h2>
+
+<br><br>
+<p>Here are <%= @stations.count %> Stations</p>
+
+
+<div>
+  <p>
+    <% @stations.each do |station| %>
+      Station Name:                            <%= station.name %>
+      Station Address:                         <%= station.address %>
+      Station City:                            <%= station.city %>
+      Station State:                           <%= station.state %>
+      Station ZipCode:                         <%= station.zip %>
+      Station Fuel Types Availeble:            <%= station.fuel_type %>
+      Station Distance from your selected zip: <%= station.distance %>
+      Station Access Days/Times:               <%= station.access_days_times %>
+      <br><br>
+    <% end %>
+  </p>
+</div>
