@@ -1,4 +1,4 @@
-class Station < ApplicationRecord
+class Station 
   attr_reader :name
               :address
               :city
@@ -9,6 +9,7 @@ class Station < ApplicationRecord
               :access_days_times
 
   def self.station_search(zip)
+    NrelCall.alt_search(zip)
 
   end
 

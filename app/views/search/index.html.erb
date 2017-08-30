@@ -7,8 +7,14 @@
 <div>
   <p>
     <% @stations.each do |station| %>
-      <%= station. %>
-
+      Station Name:                            <%= station.name %>
+      Station Address:                         <%= station.address %>
+      Station City:                            <%= station.city %>
+      Station State:                           <%= station.state %>
+      Station ZipCode:                         <%= station.zip %>
+      Station Fuel Types Availeble:            <%= station.fuel_type %>
+      Station Distance from your selected zip: <%= station.distance %>
+      Station Access Days/Times:               <%= station.access_days_times %>
       <br><br>
     <% end %>
   </p>
