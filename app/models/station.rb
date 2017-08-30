@@ -8,26 +8,44 @@ class Station
               :distance
               :access_days_times
 
-  def initialize(params)
-    byebug
-
-    @name = params[:name]
-    @address = params[:]
-    @city = params[:]
-    @state = params[:]
-    @zip = params[:]
-    @fuel_type = params[:]
-    @distance = params[:]
-    @access_days_times = params[:]
-
+  def initialize(station)
+    @name = station[:station_name]
+    @address = station[:street_address]
+    @city = station[:city]
+    @state = station[:state]
+    @zip = station[:zip]
+    @fuel_type = station[:fuel_type_code]
+    @distance = station[:distance]
+    @access_days_times = station[:access_days_times]
   end
 
   def self.station_search(zip)
-    stations = NrelCall.alt_search(zip)
+    alt_fuel = []
+    stations = NrelService.alt_search(zip)
     stations.each do |station|
-      Station.new(station)
+      alt_fuel << Station.new(station)
     end
-    byebug
+    alt_fuel
   end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
